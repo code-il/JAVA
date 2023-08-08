@@ -30,13 +30,27 @@ public class os1 {
         int arr2[]=new int[n];
         int tat[]=new int[n];
         int wt[]=new int[n];
-        int ct[]=new int[n];
+        int ct[]=new int[n];//Code of @@dil
+        int ck=0;
+        String ck1=new String();
+        System.out.println("ARRIVAL TIME PROVIDED(Y/N):");
+        ck1=sc.next();
+        if(ck1=="Y"||ck1=="y"){
+            ck=1;
+        }
+        else{
+            ck=0;
+        }
         for(int i=0;n>i;i++){
             System.out.println("enter:"+(i+1)+":Burst time:");
             arr1[i]=sc.nextInt();
             j1[i]= i+1;
-            System.out.println("enter:"+(1+i)+":arrvial time:");
-            arr2[i]=sc.nextInt();
+            if(ck==1) {
+                System.out.println("enter:" + (1 + i) + ":arrvial time:");
+                arr2[i] = sc.nextInt();
+            }else{
+                arr2[i] =0;
+            }
         }
         bsort(j1,arr1,arr2);
         ct[0]=arr1[0];
